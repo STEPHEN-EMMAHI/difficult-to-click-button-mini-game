@@ -2,13 +2,41 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/src/assets/favicon-32x32.png" />
+    <meta
+      name="description"
+      content="A project to learn how to create an impossible-to-click-button"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>difficult-to-click-button-mini-game</title>
     <link rel="stylesheet" href="src/view/style.css" />
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <div
+      class="bg-gray-300 flex flex-col items-center justify-center gap-8 h-screen"
+    >
+      <div class="img-container">
+        <img
+          class="h-auto object-cover w-full"
+          src="src/assets/marry-me-img.jpg"
+          alt="A cat holding a flower and ring with will you marry me caption"
+        />
+      </div>
+      <div class="button-container flex gap-8 justify-between">
+        <button
+          aria-label="marry-me-yes"
+          class="bg-green-800 text-white py-3.5 px-6"
+        >
+          Yes
+        </button>
+        <button
+          aria-label="marry-me-no"
+          class="bg-red-800 text-white py-3.5 px-6"
+        >
+          No
+        </button>
+      </div>
+    </div>
+    <script type="module" src="/src/controller/main.js"></script>
   </body>
 </html>
