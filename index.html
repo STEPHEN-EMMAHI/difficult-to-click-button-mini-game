@@ -5,25 +5,34 @@
     <link rel="icon" type="image/png" href="/src/assets/favicon-32x32.png" />
     <meta
       name="description"
-      content="A project to learn how to create an impossible-to-click-button"
+      content="A project to learn how to create an diificult-to-click-button"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>difficult-to-click-button-mini-game</title>
     <link rel="stylesheet" href="src/view/style.css" />
   </head>
-  <body>
+  <body class="bg-gray-300">
+    <p
+      id="agreeable-text"
+      class="bg-green-800 text-white text-center mt-6 w-3/4 md:w-2/4 m-auto p-1 text-sm -translate-y-20 transition-transform duration-300"
+    >
+      Awww!!! We will make the best couples together🥰
+    </p>
     <div
-      class="bg-gray-300 flex flex-col items-center justify-center gap-8 h-screen"
+      class="flex flex-col items-center justify-center gap-8 h-[90vh] md:h-[95vh]"
     >
       <div class="img-container">
         <img
           class="h-auto object-cover w-full"
           src="src/assets/marry-me-img.jpg"
           alt="A cat holding a flower and ring with will you marry me caption"
+          width="200"
+          height="200"
         />
       </div>
       <div class="button-container flex gap-8 justify-between">
         <button
+          id="marry-me-yes"
           aria-label="marry-me-yes"
           class="bg-green-800 text-white py-3.5 px-6"
         >
