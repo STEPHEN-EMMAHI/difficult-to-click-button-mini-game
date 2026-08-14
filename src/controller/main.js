@@ -1,4 +1,5 @@
 import { agree, removeAgreeText } from "../model/agree.js";
+import { disagree } from "../model/disagree.js";
 import { handleSystemThemeChange } from "../model/theme.js";
 
 // generate random number from 1-30 immediately page loads
@@ -17,7 +18,22 @@ IS_DARK_MODE.addEventListener("change", handleSystemThemeChange);
 
 // if user clicks on the yes button, call agree function
 const YES_BUTTON = document.getElementById("marry-me-yes");
+
+// add functionality to the yes button and...
+// preventing race condition caused by multiple timers stacking up.
+let timerID = null;
 YES_BUTTON.addEventListener("click", () => {
   agree();
-  setTimeout(removeAgreeText, 5000);
+
+  if (timerID) {
+    clearTimeout(timerID);
+  }
+
+  timerID = setTimeout(() => {
+    removeAgreeText();
+    timerID = null;
+  }, 5000);
 });
+
+// add sensor to no button to detect mouse surroundings
+document.addEventListener("mousemove", disagree);
