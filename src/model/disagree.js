@@ -36,6 +36,7 @@ export function disagree() {
     NO_BUTTON.addEventListener("click", () => {
       // apply styles
       const NON_AGREEABLE_TEXT = document.getElementById("non-agreeable-text");
+      NON_AGREEABLE_TEXT.textContent = `Okay, Okay! You win. You chased the button ${count} times. You clearly really want to say NO`;
       NON_AGREEABLE_TEXT.classList.remove("-translate-y-36");
     });
 
@@ -49,11 +50,13 @@ export function disagree() {
     // calculating new random position within the viewport width
     // and height
     const MAXIMUM_WIDTH = window.innerWidth - RECT.width;
-    const MAXIMUM_HEIGHT = window.innerHeight - RECT.height;
+    const HALF_HEIGHT = window.innerHeight / 2;
+    const MAXIMUM_HEIGHT = HALF_HEIGHT - RECT.height;
 
     // getting a random width and height
     const RANDOM_WIDTH = Math.floor(Math.random() * MAXIMUM_WIDTH);
-    const RANDOM_HEIGHT = Math.floor(Math.random() * MAXIMUM_HEIGHT);
+    const RANDOM_HEIGHT =
+      Math.floor(Math.random() * MAXIMUM_HEIGHT) + HALF_HEIGHT;
 
     // move the button
     NO_BUTTON.style.position = "fixed";

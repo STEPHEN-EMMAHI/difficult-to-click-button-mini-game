@@ -1,6 +1,8 @@
 export function agree() {
   const AGREEABLE_TEXT = document.getElementById("agreeable-text");
   if (AGREEABLE_TEXT.classList.contains("-translate-y-20")) {
+    AGREEABLE_TEXT.textContent =
+      "Awww!!! We will make the best couples together🥰";
     AGREEABLE_TEXT.classList.remove("-translate-y-20");
   } else {
     console.log("agreeable text already exists");
