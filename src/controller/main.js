@@ -1,14 +1,7 @@
 import { agree, removeAgreeText } from "../model/agree.js";
 import { disagree } from "../model/disagree.js";
+import { randomNumber } from "../model/random.js";
 import { handleSystemThemeChange } from "../model/theme.js";
-
-// generate random number from 1-30 immediately page loads
-document.addEventListener("DOMContentLoaded", () => {
-  const MIN = 1;
-  const MAX = 30;
-  const RANDOM = Math.floor(Math.random() * (MAX - MIN + 1)) + MIN;
-  console.log("random number = ", RANDOM);
-});
 
 // check user theme and change accordinly to user preference
 const IS_DARK_MODE = window.matchMedia("(prefers-color-scheme: dark)");
@@ -36,4 +29,5 @@ YES_BUTTON.addEventListener("click", () => {
 });
 
 // add sensor to no button to detect mouse surroundings
-document.addEventListener("mousemove", disagree);
+const NO_BUTTON = document.getElementById("marry-me-no");
+NO_BUTTON.addEventListener("mousemove", disagree);
